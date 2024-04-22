@@ -1,0 +1,36 @@
+# host2/docker-compose.yml
+version: '3.8'
+
+services:
+  vm1:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+    command: stress-ng --cpu 1 --io 1 --vm 1 --vm-bytes 128M --timeout 300s
+
+  vm2:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+    command: stress-ng --cpu 1 --io 1 --vm 1 --vm-bytes 128M --timeout 300s
+
+  vm3:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+    command: stress-ng --cpu 1 --io 1 --vm 1 --vm-bytes 128M --timeout 300s

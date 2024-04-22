@@ -1,0 +1,34 @@
+# host3/docker-compose.yml
+version: '3.8'
+
+services:
+  vm1:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+    
+  vm2:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+    
+  vm3:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+    
